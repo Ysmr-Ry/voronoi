@@ -38,10 +38,14 @@ launch cvs = do
 
 consView :: World (View FocusEvent)
 consView = do
-  let screenSize' = fmap (_1%~(/2)) screenSize
-      (w,h) = v2 $ act screenSize'
+  let 
+    screenSize' = fmap (_1%~(/2)) screenSize
+    (w,h) = v2 $ act screenSize'
+    flipPt ((x1,y1):(x2,y2):xs)
+      | x1 > x2   = (x2,y1):(x1,y2):xs
+      | otherwise = (x1,y1):(x2,y2):xs
   (rw,rh) <- io screenSize'
-  pts <- io $ fmap (sortOn snd . take 10 . nubBy (\(a,_) (b,_) -> abs (a-b) < 5) . nubBy (\(_,a) (_,b) -> abs (a-b) < 5)) $ replicateM 100 $ do
+  pts <- io $ fmap (flipPt . sortOn snd . take 10 . nubBy (\(a,_) (b,_) -> abs (a-b) < 5) . nubBy (\(_,a) (_,b) -> abs (a-b) < 5)) $ replicateM 100 $ do
     x <- randomRIO (0,rw)
     y <- randomRIO (0,rh)
     return (x,y)
@@ -89,11 +93,18 @@ consView = do
                   case circleFrom3Points (convPt i $ pts Prelude.!! i) (convPt j $ pts Prelude.!! j) (convPt k $ pts Prelude.!! k) of
                     Just (center, r) -> stroke 2 (1,0,0,1) $ circle (v2 $ po center) (po r)
                     Nothing -> return ()
-                let leaves = nub $ concatMap (\(Breakpoint p q) -> [p, q]) $ inOrder btree
+                let discrete [] = []
+                    discrete (x:[]) = []
+                    discrete (x:y:xs) = y : discrete xs
+                    order = concatMap (\(Breakpoint p q) -> [p, q]) $ (\x -> if length x == 2 && fst (pts Prelude.!! 0) > fst (pts Prelude.!! 1) then reverse x else x) $ inOrder btree
+                    leaves = head order : discrete (tail order)
                 iforM_ leaves $ \i p@(P _ _ y) -> do
                   let prvP = if i > 0 then Just (leaves Prelude.!! (i-1)) else Nothing
                       nxtP = if i < length leaves-1 then Just (leaves Prelude.!! (i+1)) else Nothing
                       fi = fromIntegral
+                      ptComp (P _ x1 y1) (P _ x2 y2) = x1 < x2
+                      minPt p q = if p `ptComp` q then p else q
+                      maxPt p q = if p `ptComp` q then q else p
                       sx = if i > 0 then intersection (fromJust prvP) p rd else 0
                       ex = if i < length leaves-1 then intersection p (fromJust nxtP) rd else rw
                       step = if (ex-sx)/15 > 20 then (ex-sx)/50 else (ex-sx)/15
@@ -105,6 +116,7 @@ consView = do
 
                     when (y1 >= 0 && y1 <= rh) $ do
                       stroke 2 (0,0.5,1,1) $ line ((both%~po) (from,y1)) $ (both%~po) (to,y2)
+                  --fill gray $ text "mplus" (po $ show (prvP, nxtP)) LeftAlign TopBase (v2 $ po (20,40+fi i*20)) 10
                 --fill gray $ text "mplus" (po $ show leaves) LeftAlign TopBase (v2 $ po (20,20)) 10
               let mkTree (ox,oy) flr pad Nil = []
                   mkTree (ox,oy) flr pad n@(Node l (Breakpoint (P i _ _) (P j _ _)) r) = mkTree (ox-pad, oy+1.5*pad`max`15) False (pad/2) l ++ [((ox,oy), (i,j), n, pad, flr)] ++ mkTree (ox+pad, oy+1.5*pad`max`15) True (pad/2) r
