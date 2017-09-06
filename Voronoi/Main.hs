@@ -106,13 +106,13 @@ consView = do
                     when (y1 >= 0 && y1 <= rh) $ do
                       stroke 2 (0,0.5,1,1) $ line ((both%~po) (from,y1)) $ (both%~po) (to,y2)
                 --fill gray $ text "mplus" (po $ show leaves) LeftAlign TopBase (v2 $ po (20,20)) 10
-              let mkTree (ox,oy) pad Nil = []
-                  mkTree (ox,oy) pad n@(Node l (Breakpoint (P i _ _) (P j _ _)) r) = mkTree (ox-pad, oy+60) (pad/2) l ++ [((ox,oy), (i,j), n, pad/2)] ++ mkTree (ox+pad, oy+60) (pad/2) r
-                  tree = mkTree (rw/2,rw/5+10) (rw/5) btree
-              forM_ tree $ \(p,(i,j),n,rad) -> do
+              let mkTree (ox,oy) flr pad Nil = []
+                  mkTree (ox,oy) flr pad n@(Node l (Breakpoint (P i _ _) (P j _ _)) r) = mkTree (ox-pad, oy+1.5*pad`max`15) False (pad/2) l ++ [((ox,oy), (i,j), n, pad, flr)] ++ mkTree (ox+pad, oy+1.5*pad`max`15) True (pad/2) r
+                  tree = mkTree (rw/2,rw/5+30) True (rw/5) btree
+              forM_ tree $ \(p,(i,j),n,rad,flr) -> do
                 let p' = (_1%~(+rw)) p
                 stroke 2 gray $ circle ((both%~po) p') (po rad)
-                fill gray $ text "mplus" (po $ show (i,j)) CenterAlign MiddleBase (if (rad/2) > 10 then p' & both %~ po else p' & _1 %~ (+ (rad+15)) & both %~ po) (po $ (rad/2) `max` 10)
+                fill gray $ text "mplus" (po $ show (i,j)) CenterAlign MiddleBase (if (rad/2) > 10 then p' & both %~ po else p' & _1 %~ (if flr then (+ (rad+15)) else (subtract (rad+15))) & both %~ po) (po $ (rad/2) `max` 10)
                 stroke 2 gray $ do
                   let isLeft (Node Nil _ _) = Nothing
                       isLeft (Node l _ _) = Just l
@@ -125,7 +125,7 @@ consView = do
                   when (isJust nl) $ do
                     let
                       Node _ (Breakpoint (P i _ _) (P j _ _)) _ = fromJust nl
-                      (q,_,_,_) = head $ filter ((==(i,j)) . (^._2)) tree
+                      (q,_,_,_,_) = head $ filter ((==(i,j)) . (^._2)) tree
                       q' = (_1%~(+rw)) q
                       (px, py) = p'
                       (qx, qy) = q'
@@ -137,7 +137,7 @@ consView = do
                   when (isJust nr) $ do
                     let
                       Node _ (Breakpoint (P i _ _) (P j _ _)) _ = fromJust nr
-                      (q,_,_,_) = head $ filter ((==(i,j)) . (^._2)) tree
+                      (q,_,_,_,_) = head $ filter ((==(i,j)) . (^._2)) tree
                       q' = (_1%~(+rw)) q
                       (px, py) = p'
                       (qx, qy) = q'
