@@ -1,0 +1,1131 @@
+{-# LINE 1 "/var/folders/vf/3ps995857210wmpgxv8lrnbh0000gn/T/ghc8946_0/ghc_22.s" #-}
+.data
+	.align 2
+.align 0
+.globl ___stginit_Main
+___stginit_Main:
+.data
+	.align 2
+.align 0
+_ruwg_closure:
+	.long	_ruwg_info
+	.long	0
+	.long	0
+	.long	0
+.const
+	.align 2
+.align 0
+_cuyt_str:
+	.byte	67
+	.byte	97
+	.byte	110
+	.byte	118
+	.byte	97
+	.byte	115
+	.byte	32
+	.byte	110
+	.byte	111
+	.byte	116
+	.byte	32
+	.byte	102
+	.byte	111
+	.byte	117
+	.byte	110
+	.byte	100
+	.byte	33
+	.byte	0
+.text
+	.align 2
+_ruwg_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	22
+_ruwg_info:
+Lcuyu:
+	call 1f
+1:	popl	%eax
+	leal -12(%ebp),%ecx
+	cmpl 840(%ebx),%ecx
+	jb Lcuyv
+Lcuyw:
+	subl $4,%esp
+	pushl %esi
+	pushl %ebx
+	movl %eax,76(%esp)
+	call L_newCAF$stub
+	addl $12,%esp
+	testl %eax,%eax
+	je Lcuys
+Lcuyr:
+	movl 64(%esp),%ecx
+	movl L_stg_bh_upd_frame_info$non_lazy_ptr-(1b)+0(%ecx),%edx
+	movl %edx,-12(%ebp)
+	movl %eax,-8(%ebp)
+	movl %ecx,%eax
+	addl $_cuyt_str-(1b)+0,%eax
+	movl %eax,8(%ebx)
+	addl $-12,%ebp
+	jmp _ghczmprim_GHCziCString_unpackCStringzh_info
+Lcuys:
+	jmp *(%esi)
+Lcuyv:
+	jmp *-16(%ebx)
+	.long  _ruwg_info - _ruwg_info_dsp
+.data
+	.align 2
+.align 0
+.globl _Main_main2_closure
+_Main_main2_closure:
+	.long	_Main_main2_info
+	.long	0
+	.long	0
+	.long	0
+.text
+	.align 2
+_Main_main2_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_Main_main2_info)+0
+	.long	0
+	.long	196630
+.globl _Main_main2_info
+_Main_main2_info:
+LcuyN:
+	call 1f
+1:	popl	%eax
+	leal -12(%ebp),%ecx
+	cmpl 840(%ebx),%ecx
+	jb LcuyO
+LcuyP:
+	subl $4,%esp
+	pushl %esi
+	pushl %ebx
+	movl %eax,76(%esp)
+	call L_newCAF$stub
+	addl $12,%esp
+	testl %eax,%eax
+	je LcuyM
+LcuyL:
+	movl 64(%esp),%ecx
+	movl L_stg_bh_upd_frame_info$non_lazy_ptr-(1b)+0(%ecx),%edx
+	movl %edx,-12(%ebp)
+	movl %eax,-8(%ebp)
+	movl %ecx,%eax
+	addl $_ruwg_closure-(1b)+0,%eax
+	movl %eax,8(%ebx)
+	addl $-12,%ebp
+	jmp _base_GHCziErr_error_info
+LcuyM:
+	jmp *(%esi)
+LcuyO:
+	jmp *-16(%ebx)
+	.long  _Main_main2_info - _Main_main2_info_dsp
+.data
+	.align 2
+.align 0
+.globl _Main_main3_closure
+_Main_main3_closure:
+	.long	_Main_main3_info
+	.long	0
+	.long	0
+	.long	0
+.const
+	.align 2
+.align 0
+_cuzc_str:
+	.byte	99
+	.byte	97
+	.byte	110
+	.byte	118
+	.byte	97
+	.byte	115
+	.byte	0
+.text
+	.align 2
+_Main_main3_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	22
+.globl _Main_main3_info
+_Main_main3_info:
+Lcuzf:
+	call 1f
+1:	popl	%eax
+	leal -16(%ebp),%ecx
+	cmpl 840(%ebx),%ecx
+	jb Lcuzn
+Lcuzo:
+	subl $4,%esp
+	pushl %esi
+	pushl %ebx
+	movl %eax,76(%esp)
+	call L_newCAF$stub
+	addl $12,%esp
+	testl %eax,%eax
+	je Lcuzb
+Lcuza:
+	movl 64(%esp),%ecx
+	movl L_stg_bh_upd_frame_info$non_lazy_ptr-(1b)+0(%ecx),%edx
+	movl %edx,-12(%ebp)
+	movl %eax,-8(%ebp)
+	movl %ecx,%eax
+	addl $_cuzd_info-(1b)+0,%eax
+	movl %eax,-16(%ebp)
+	movl %ecx,%eax
+	addl $_cuzc_str-(1b)+0,%eax
+	movl %eax,8(%ebx)
+	addl $-16,%ebp
+	jmp _ghczmprim_GHCziCString_unpackCStringzh_info
+Lcuzb:
+	jmp *(%esi)
+Lcuzn:
+	jmp *-16(%ebx)
+	.long  _Main_main3_info - _Main_main3_info_dsp
+.text
+	.align 2
+_cuzd_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_cuzd_info:
+Lcuzd:
+	call 1f
+1:	popl	%eax
+	movl %eax,%ecx
+	addl $_cuzi_info-(1b)+0,%ecx
+	movl %ecx,(%ebp)
+	jmp *L_toJSStr$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuzd_info - _cuzd_info_dsp
+.text
+	.align 2
+_cuzi_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_cuzi_info:
+Lcuzi:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lcuzs
+Lcuzr:
+	movl L_ghczmprim_GHCziTypes_Izh_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lcuzs:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unbx_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuzi_info - _cuzi_info_dsp
+.data
+	.align 2
+.align 0
+.globl _Main_main1_closure
+_Main_main1_closure:
+	.long	_Main_main1_info
+	.long	0
+.text
+	.align 2
+_suyj_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_suyj_info)+8
+	.long	131087
+	.long	1
+	.long	65546
+_suyj_info:
+LcuBo:
+	call 1f
+1:	popl	%eax
+	movl 16(%ebx),%ecx
+	movl 8(%ebx),%edx
+	movl %eax,64(%esp)
+	leal -4(%ebp),%eax
+	cmpl 840(%ebx),%eax
+	jb LcuBp
+LcuBq:
+	movl 64(%esp),%eax
+	addl $_cuBl_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	movl %ecx,24(%ebx)
+	movl %edx,16(%ebx)
+	movl 2(%esi),%eax
+	movl %eax,8(%ebx)
+	addl $-4,%ebp
+	jmp _VoronoiziMain_zdwa1_info
+LcuBp:
+	movl %ecx,16(%ebx)
+	movl %edx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _suyj_info - _suyj_info_dsp
+.text
+	.align 2
+_cuBl_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_cuBl_info:
+LcuBl:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja LcuBt
+LcuBs:
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+LcuBt:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuBl_info - _cuBl_info_dsp
+.text
+	.align 2
+_suym_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_suym_info)+8
+	.long	131072
+	.long	196629
+_suym_info:
+LcuBx:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	leal -16(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb LcuBy
+LcuBz:
+	addl $20,%edi
+	cmpl 856(%ebx),%edi
+	ja LcuBB
+LcuBA:
+	movl L_stg_upd_frame_info$non_lazy_ptr-(1b)+0(%eax),%edx
+	movl %edx,-12(%ebp)
+	movl %ecx,-8(%ebp)
+	movl 12(%ecx),%edx
+	movl 16(%ecx),%ecx
+	movl %eax,64(%esp)
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_Canvas_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-16(%edi)
+	movl %ecx,-12(%edi)
+	movl %edx,-8(%edi)
+	movl 64(%esp),%eax
+	movl %eax,%ecx
+	addl $_suyj_info-(1b)+0,%ecx
+	movl %ecx,-4(%edi)
+	leal -15(%edi),%ecx
+	movl %ecx,(%edi)
+	movl %eax,%ecx
+	addl $_cuBu_info-(1b)+0,%ecx
+	movl %ecx,-16(%ebp)
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_forkIO1_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	incl %eax
+	movl %eax,16(%ebx)
+	leal -2(%edi),%eax
+	movl %eax,8(%ebx)
+	addl $-16,%ebp
+	jmp _CoreziWorldziInternal_zdwa5_info
+LcuBB:
+	movl $20,904(%ebx)
+LcuBy:
+	movl %ecx,%esi
+	jmp *-16(%ebx)
+	.long  _suym_info - _suym_info_dsp
+.text
+	.align 2
+_cuBu_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_cuBu_info:
+LcuBu:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja LcuBE
+LcuBD:
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+LcuBE:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuBu_info - _cuBu_info_dsp
+.text
+	.align 2
+_Main_main1_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_Main_main1_info)+8
+	.long	65539
+	.long	0
+	.long	134152207
+.globl _Main_main1_info
+_Main_main1_info:
+LcuBF:
+	call 1f
+1:	popl	%eax
+	leal -8(%ebp),%ecx
+	cmpl 840(%ebx),%ecx
+	jb LcuBG
+LcuBH:
+	movl %eax,%ecx
+	addl $_cuAi_info-(1b)+0,%ecx
+	movl %ecx,-4(%ebp)
+	movl L_IBJHmTQyrtkCXFsQwT7UYx_HasteziPrimziAny_jsNull_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	addl $-4,%ebp
+	testw $7,%si
+	jne _cuAi_info
+LcuAj:
+	jmp *(%esi)
+LcuBG:
+	movl L_Main_main1_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	jmp *-8(%ebx)
+	.long  _Main_main1_info - _Main_main1_info_dsp
+.text
+	.align 2
+_cuAi_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAi_info)+8
+	.long	0
+	.long	65994784
+_cuAi_info:
+LcuAi:
+	call 1f
+1:	popl	%eax
+	movl %eax,%ecx
+	addl $_cuAn_info-(1b)+0,%ecx
+	movl %ecx,-4(%ebp)
+	movl 3(%esi),%ecx
+	movl L_CoreziFrontziInternal_startzuf1_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	movl %ecx,(%ebp)
+	addl $-4,%ebp
+	testw $7,%si
+	jne _cuAn_info
+LcuAo:
+	jmp *(%esi)
+	.long  _cuAi_info - _cuAi_info_dsp
+.text
+	.align 2
+_cuAn_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAn_info)+8
+	.long	65
+	.long	63897632
+_cuAn_info:
+LcuAn:
+	call 1f
+1:	popl	%eax
+	movl 4(%ebp),%ecx
+	addl $_cuAv_info-(1b)+0,%eax
+	movl %eax,4(%ebp)
+	addl $4,%ebp
+	movl 3(%esi),%eax
+	movl 872(%ebx),%edx
+	movl %eax,64(%esp)
+	movl 20(%edx),%eax
+	movl %ebp,12(%eax)
+	movl 888(%ebx),%eax
+	movl %ecx,76(%esp)
+	leal 4(%edi),%ecx
+	movl %ecx,8(%eax)
+	movl 100(%edx),%ecx
+	movl %ecx,88(%esp)
+	movl 104(%edx),%ecx
+	movl %ecx,100(%esp)
+	leal 4(%edi),%ecx
+	subl (%eax),%ecx
+	xorl %eax,%eax
+	movl %eax,112(%esp)
+	movl 88(%esp),%eax
+	subl %ecx,%eax
+	movl 100(%esp),%ecx
+	movl %eax,124(%esp)
+	movl 112(%esp),%eax
+	sbbl %eax,%ecx
+	movl 124(%esp),%eax
+	movl %eax,100(%edx)
+	movl %ecx,104(%edx)
+	subl $4,%esp
+	pushl $0
+	pushl %ebx
+	call L_suspendThread$stub
+	addl $12,%esp
+	subl $4,%esp
+	movl 80(%esp),%ecx
+	pushl %ecx
+	movl 72(%esp),%ecx
+	pushl %ecx
+	movl %eax,148(%esp)
+	call L___app1$stub
+	addl $12,%esp
+	subl $8,%esp
+	movl 144(%esp),%ecx
+	pushl %ecx
+	movl %eax,160(%esp)
+	call L_resumeThread$stub
+	addl $12,%esp
+	movl %eax,%ebx
+	movl 872(%ebx),%eax
+	movl 20(%eax),%ecx
+	movl 12(%ecx),%ebp
+	addl $104,%ecx
+	movl %ecx,840(%ebx)
+	movl $0,904(%ebx)
+	movl 888(%ebx),%ecx
+	movl 8(%ecx),%edx
+	leal -4(%edx),%edi
+	movl %eax,160(%esp)
+	movl (%ecx),%eax
+	movl 48(%ecx),%ecx
+	shll $12,%ecx
+	decl %ecx
+	movl %ecx,172(%esp)
+	movl %eax,%ecx
+	movl %edx,184(%esp)
+	movl 172(%esp),%edx
+	addl %edx,%ecx
+	movl %ecx,856(%ebx)
+	movl 160(%esp),%ecx
+	movl 100(%ecx),%edx
+	movl 104(%ecx),%ecx
+	movl %ecx,196(%esp)
+	movl 184(%esp),%ecx
+	subl %eax,%ecx
+	xorl %eax,%eax
+	addl %ecx,%edx
+	movl 196(%esp),%ecx
+	adcl %eax,%ecx
+	movl 160(%esp),%eax
+	movl %edx,100(%eax)
+	movl %ecx,104(%eax)
+	movl 148(%esp),%eax
+	movl %eax,%esi
+	jmp *(%ebp)
+	.long  _cuAn_info - _cuAn_info_dsp
+.text
+	.align 2
+_cuAv_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAv_info)+8
+	.long	0
+	.long	63897632
+_cuAv_info:
+LcuAv:
+	call 1f
+1:	popl	%eax
+	movl %eax,%ecx
+	addl $_cuAx_info-(1b)+0,%ecx
+	movl %ecx,(%ebp)
+	movl L_Main_main3_closure$non_lazy_ptr-(1b)+0(%eax),%ecx
+	movl %ecx,16(%ebx)
+	movl L_z30UqEPBHMdsbP05EH96SVtGd_ControlziMonadziIOziClass_zdfMonadIOIO_closure$non_lazy_ptr-(1b)+0(%eax),%ecx
+	movl %ecx,8(%ebx)
+	movl L_stg_ap_v_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%ebp)
+	addl $-4,%ebp
+	jmp _LApUZZuWlHYm7n1MKPK7mnS_HasteziDOMziJSString_elemById_info
+	.long  _cuAv_info - _cuAv_info_dsp
+.text
+	.align 2
+_cuAx_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAx_info)+8
+	.long	0
+	.long	29556768
+_cuAx_info:
+LcuAx:
+	call 1f
+1:	popl	%eax
+	addl $_cuAz_info-(1b)+0,%eax
+	movl %eax,(%ebp)
+	testw $7,%si
+	jne _cuAz_info
+LcuAA:
+	jmp *(%esi)
+	.long  _cuAx_info - _cuAx_info_dsp
+.text
+	.align 2
+_cuAz_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAz_info)+8
+	.long	0
+	.long	29556768
+_cuAz_info:
+LcuAz:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	andl $7,%ecx
+	cmpl $2,%ecx
+	jae LcuCf
+LuuCh:
+	addl $4,%ebp
+	jmp _cuCc_entry
+LcuCf:
+	addl $_cuAF_info-(1b)+0,%eax
+	movl %eax,(%ebp)
+	movl 2(%esi),%esi
+	testw $7,%si
+	jne _cuAF_info
+LcuAG:
+	jmp *(%esi)
+	.long  _cuAz_info - _cuAz_info_dsp
+.text
+	.align 2
+_cuAF_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAF_info)+8
+	.long	0
+	.long	29556768
+_cuAF_info:
+LcuAF:
+	call 1f
+1:	popl	%eax
+	movl %eax,%ecx
+	addl $_cuAK_info-(1b)+0,%ecx
+	movl %ecx,-4(%ebp)
+	movl 3(%esi),%ecx
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf2_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	movl %ecx,(%ebp)
+	addl $-4,%ebp
+	testw $7,%si
+	jne _cuAK_info
+LcuAL:
+	jmp *(%esi)
+	.long  _cuAF_info - _cuAF_info_dsp
+.text
+	.align 2
+_cuAK_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAK_info)+8
+	.long	65
+	.long	21168160
+_cuAK_info:
+LcuAK:
+	call 1f
+1:	popl	%eax
+	addl $_cuAS_info-(1b)+0,%eax
+	movl %eax,(%ebp)
+	movl 3(%esi),%eax
+	movl 4(%ebp),%ecx
+	movl 872(%ebx),%edx
+	movl %eax,64(%esp)
+	movl 20(%edx),%eax
+	movl %ebp,12(%eax)
+	movl 888(%ebx),%eax
+	movl %ecx,76(%esp)
+	leal 4(%edi),%ecx
+	movl %ecx,8(%eax)
+	movl 100(%edx),%ecx
+	movl %ecx,88(%esp)
+	movl 104(%edx),%ecx
+	movl %ecx,100(%esp)
+	leal 4(%edi),%ecx
+	subl (%eax),%ecx
+	xorl %eax,%eax
+	movl %eax,112(%esp)
+	movl 88(%esp),%eax
+	subl %ecx,%eax
+	movl 100(%esp),%ecx
+	movl %eax,124(%esp)
+	movl 112(%esp),%eax
+	sbbl %eax,%ecx
+	movl 124(%esp),%eax
+	movl %eax,100(%edx)
+	movl %ecx,104(%edx)
+	subl $4,%esp
+	pushl $0
+	pushl %ebx
+	call L_suspendThread$stub
+	addl $12,%esp
+	subl $4,%esp
+	movl 80(%esp),%ecx
+	pushl %ecx
+	movl 72(%esp),%ecx
+	pushl %ecx
+	movl %eax,148(%esp)
+	call L___app1$stub
+	addl $12,%esp
+	subl $8,%esp
+	movl 144(%esp),%ecx
+	pushl %ecx
+	movl %eax,160(%esp)
+	call L_resumeThread$stub
+	addl $12,%esp
+	movl %eax,%ebx
+	movl 872(%ebx),%eax
+	movl 20(%eax),%ecx
+	movl 12(%ecx),%ebp
+	addl $104,%ecx
+	movl %ecx,840(%ebx)
+	movl $0,904(%ebx)
+	movl 888(%ebx),%ecx
+	movl 8(%ecx),%edx
+	leal -4(%edx),%edi
+	movl %eax,160(%esp)
+	movl (%ecx),%eax
+	movl 48(%ecx),%ecx
+	shll $12,%ecx
+	decl %ecx
+	movl %ecx,172(%esp)
+	movl %eax,%ecx
+	movl %edx,184(%esp)
+	movl 172(%esp),%edx
+	addl %edx,%ecx
+	movl %ecx,856(%ebx)
+	movl 160(%esp),%ecx
+	movl 100(%ecx),%edx
+	movl 104(%ecx),%ecx
+	movl %ecx,196(%esp)
+	movl 184(%esp),%ecx
+	subl %eax,%ecx
+	xorl %eax,%eax
+	addl %ecx,%edx
+	movl 196(%esp),%ecx
+	adcl %eax,%ecx
+	movl 160(%esp),%eax
+	movl %edx,100(%eax)
+	movl %ecx,104(%eax)
+	movl 148(%esp),%eax
+	movl %eax,%esi
+	jmp *(%ebp)
+	.long  _cuAK_info - _cuAK_info_dsp
+.text
+	.align 2
+_cuAS_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuAS_info)+8
+	.long	65
+	.long	21168160
+_cuAS_info:
+LcuAS:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja LcuBW
+LcuBV:
+	movl L_base_GHCziPtr_Ptr_con_info$non_lazy_ptr-(1b)+0(%eax),%ecx
+	movl %ecx,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%ecx
+	andl $7,%ecx
+	cmpl $2,%ecx
+	jae LcuCb
+LuuCi:
+	addl $8,%ebp
+	jmp _cuCc_entry
+LcuCb:
+	movl %eax,%ecx
+	addl $_cuB1_info-(1b)+0,%ecx
+	movl %ecx,(%ebp)
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf1_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	testw $7,%si
+	jne _cuB1_info
+LcuB2:
+	jmp *(%esi)
+LcuBW:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unbx_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuAS_info - _cuAS_info_dsp
+.text
+	.align 2
+_cuB1_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuB1_info)+8
+	.long	65
+	.long	196640
+_cuB1_info:
+LcuB1:
+	call 1f
+1:	popl	%eax
+	addl $_cuB9_info-(1b)+0,%eax
+	movl %eax,(%ebp)
+	movl 3(%esi),%eax
+	movl 4(%ebp),%ecx
+	movl 872(%ebx),%edx
+	movl %eax,64(%esp)
+	movl 20(%edx),%eax
+	movl %ebp,12(%eax)
+	movl 888(%ebx),%eax
+	movl %ecx,76(%esp)
+	leal 4(%edi),%ecx
+	movl %ecx,8(%eax)
+	movl 100(%edx),%ecx
+	movl %ecx,88(%esp)
+	movl 104(%edx),%ecx
+	movl %ecx,100(%esp)
+	leal 4(%edi),%ecx
+	subl (%eax),%ecx
+	xorl %eax,%eax
+	movl %eax,112(%esp)
+	movl 88(%esp),%eax
+	subl %ecx,%eax
+	movl 100(%esp),%ecx
+	movl %eax,124(%esp)
+	movl 112(%esp),%eax
+	sbbl %eax,%ecx
+	movl 124(%esp),%eax
+	movl %eax,100(%edx)
+	movl %ecx,104(%edx)
+	subl $4,%esp
+	pushl $0
+	pushl %ebx
+	call L_suspendThread$stub
+	addl $12,%esp
+	subl $4,%esp
+	movl 80(%esp),%ecx
+	pushl %ecx
+	movl 72(%esp),%ecx
+	pushl %ecx
+	movl %eax,148(%esp)
+	call L___app1$stub
+	addl $12,%esp
+	subl $8,%esp
+	movl 144(%esp),%ecx
+	pushl %ecx
+	movl %eax,160(%esp)
+	call L_resumeThread$stub
+	addl $12,%esp
+	movl %eax,%ebx
+	movl 872(%ebx),%eax
+	movl 20(%eax),%ecx
+	movl 12(%ecx),%ebp
+	addl $104,%ecx
+	movl %ecx,840(%ebx)
+	movl $0,904(%ebx)
+	movl 888(%ebx),%ecx
+	movl 8(%ecx),%edx
+	leal -4(%edx),%edi
+	movl %eax,160(%esp)
+	movl (%ecx),%eax
+	movl 48(%ecx),%ecx
+	shll $12,%ecx
+	decl %ecx
+	movl %ecx,172(%esp)
+	movl %eax,%ecx
+	movl %edx,184(%esp)
+	movl 172(%esp),%edx
+	addl %edx,%ecx
+	movl %ecx,856(%ebx)
+	movl 160(%esp),%ecx
+	movl 100(%ecx),%edx
+	movl 104(%ecx),%ecx
+	movl %ecx,196(%esp)
+	movl 184(%esp),%ecx
+	subl %eax,%ecx
+	xorl %eax,%eax
+	addl %ecx,%edx
+	movl 196(%esp),%ecx
+	adcl %eax,%ecx
+	movl 160(%esp),%eax
+	movl %edx,100(%eax)
+	movl %ecx,104(%eax)
+	movl 148(%esp),%eax
+	movl %eax,%esi
+	jmp *(%ebp)
+	.long  _cuB1_info - _cuB1_info_dsp
+.text
+	.align 2
+_cuB9_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_cuB9_info)+8
+	.long	65
+	.long	196640
+_cuB9_info:
+LcuB9:
+	call 1f
+1:	popl	%eax
+	addl $20,%edi
+	cmpl 856(%ebx),%edi
+	ja LcuC8
+LcuC7:
+	movl %eax,%ecx
+	addl $_suym_info-(1b)+0,%ecx
+	movl %ecx,-16(%edi)
+	movl 4(%ebp),%ecx
+	movl %ecx,-4(%edi)
+	movl %esi,(%edi)
+	movl L_ghczmprim_GHCziTypes_ZMZN_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	incl %eax
+	movl %eax,16(%ebx)
+	leal -16(%edi),%eax
+	movl %eax,8(%ebx)
+	addl $8,%ebp
+	jmp _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_zdfMonadEventCIOzuzdsa_info
+LcuC8:
+	movl $20,904(%ebx)
+	jmp *L_stg_gc_unbx_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _cuB9_info - _cuB9_info_dsp
+.text
+	.align 2
+_cuCc_entry:
+LcuCc:
+	call 1f
+1:	popl	%eax
+	movl L_Main_main2_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	jmp _stg_ap_0_fast
+.data
+	.align 2
+.align 0
+.globl _Main_main_closure
+_Main_main_closure:
+	.long	_Main_main_info
+	.long	0
+.text
+	.align 2
+_Main_main_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_Main_main_info)+48
+	.long	65539
+	.long	0
+	.long	65551
+.globl _Main_main_info
+_Main_main_info:
+LcuFg:
+	jmp _Main_main1_info
+	.long  _Main_main_info - _Main_main_info_dsp
+.data
+	.align 2
+.align 0
+.globl _Main_main4_closure
+_Main_main4_closure:
+	.long	_Main_main4_info
+	.long	0
+.text
+	.align 2
+_Main_main4_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_Main_main4_info)+48
+	.long	65539
+	.long	0
+	.long	196623
+.globl _Main_main4_info
+_Main_main4_info:
+LcuFr:
+	call 1f
+1:	popl	%eax
+	movl L_Main_main1_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	incl %eax
+	movl %eax,8(%ebx)
+	jmp _base_GHCziTopHandler_runMainIO1_info
+	.long  _Main_main4_info - _Main_main4_info_dsp
+.data
+	.align 2
+.align 0
+.globl _ZCMain_main_closure
+_ZCMain_main_closure:
+	.long	_ZCMain_main_info
+	.long	0
+.text
+	.align 2
+_ZCMain_main_info_dsp:
+.text
+	.align 2
+	.long	_SuyQ_srt-(_ZCMain_main_info)+56
+	.long	65539
+	.long	0
+	.long	65551
+.globl _ZCMain_main_info
+_ZCMain_main_info:
+LcuFF:
+	jmp _Main_main4_info
+	.long  _ZCMain_main_info - _ZCMain_main_info_dsp
+.const_data
+	.align 2
+.align 0
+_SuyQ_srt:
+	.long	_base_GHCziErr_error_closure
+	.long	_ruwg_closure
+	.long	_VoronoiziMain_zdwa1_closure
+	.long	_CoreziWorldziInternal_zdwa5_closure
+	.long	_z30UqEPBHMdsbP05EH96SVtGd_ControlziMonadziIOziClass_zdfMonadIOIO_closure
+	.long	_LApUZZuWlHYm7n1MKPK7mnS_HasteziDOMziJSString_elemById_closure
+	.long	_IBJHmTQyrtkCXFsQwT7UYx_HasteziPrimziAny_jsNull_closure
+	.long	_CoreziFrontziInternal_startzuf1_closure
+	.long	_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf1_closure
+	.long	_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf2_closure
+	.long	_Main_main2_closure
+	.long	_Main_main3_closure
+	.long	_Main_main1_closure
+	.long	_base_GHCziTopHandler_runMainIO1_closure
+	.long	_Main_main4_closure
+.section __TEXT,__textcoal_nt,coalesced,no_toc
+.weak_definition ___i686.get_pc_thunk.ax
+.private_extern ___i686.get_pc_thunk.ax
+___i686.get_pc_thunk.ax:
+	movl (%esp), %eax
+	ret
+.non_lazy_symbol_pointer
+L_CoreziFrontziInternal_startzuf1_closure$non_lazy_ptr:
+	.indirect_symbol _CoreziFrontziInternal_startzuf1_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_IBJHmTQyrtkCXFsQwT7UYx_HasteziPrimziAny_jsNull_closure$non_lazy_ptr:
+	.indirect_symbol _IBJHmTQyrtkCXFsQwT7UYx_HasteziPrimziAny_jsNull_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_forkIO1_closure$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_forkIO1_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_Canvas_con_info$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_Canvas_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf1_closure$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf1_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf2_closure$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziGraphicsziCanvas_zdfFromAnyCanvaszuf2_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_Main_main1_closure$non_lazy_ptr:
+	.indirect_symbol _Main_main1_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_Main_main2_closure$non_lazy_ptr:
+	.indirect_symbol _Main_main2_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_Main_main3_closure$non_lazy_ptr:
+	.indirect_symbol _Main_main3_closure
+	.long	0
+.section __TEXT,__picsymbolstub2,symbol_stubs,pure_instructions,25
+L___app1$stub:
+	.indirect_symbol ___app1
+	call ___i686.get_pc_thunk.ax
+1:
+	movl L___app1$lazy_ptr-1b(%eax),%edx
+	jmp *%edx
+L___app1$stub_binder:
+	lea L___app1$lazy_ptr-1b(%eax),%eax
+	pushl %eax
+	jmp dyld_stub_binding_helper
+.section __DATA, __la_sym_ptr2,lazy_symbol_pointers
+L___app1$lazy_ptr:
+	.indirect_symbol ___app1
+	.long L___app1$stub_binder
+.non_lazy_symbol_pointer
+L_base_GHCziPtr_Ptr_con_info$non_lazy_ptr:
+	.indirect_symbol _base_GHCziPtr_Ptr_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_ghczmprim_GHCziTypes_Izh_con_info$non_lazy_ptr:
+	.indirect_symbol _ghczmprim_GHCziTypes_Izh_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_ghczmprim_GHCziTypes_ZMZN_closure$non_lazy_ptr:
+	.indirect_symbol _ghczmprim_GHCziTypes_ZMZN_closure
+	.long	0
+.section __TEXT,__picsymbolstub2,symbol_stubs,pure_instructions,25
+L_newCAF$stub:
+	.indirect_symbol _newCAF
+	call ___i686.get_pc_thunk.ax
+1:
+	movl L_newCAF$lazy_ptr-1b(%eax),%edx
+	jmp *%edx
+L_newCAF$stub_binder:
+	lea L_newCAF$lazy_ptr-1b(%eax),%eax
+	pushl %eax
+	jmp dyld_stub_binding_helper
+.section __DATA, __la_sym_ptr2,lazy_symbol_pointers
+L_newCAF$lazy_ptr:
+	.indirect_symbol _newCAF
+	.long L_newCAF$stub_binder
+.section __TEXT,__picsymbolstub2,symbol_stubs,pure_instructions,25
+L_resumeThread$stub:
+	.indirect_symbol _resumeThread
+	call ___i686.get_pc_thunk.ax
+1:
+	movl L_resumeThread$lazy_ptr-1b(%eax),%edx
+	jmp *%edx
+L_resumeThread$stub_binder:
+	lea L_resumeThread$lazy_ptr-1b(%eax),%eax
+	pushl %eax
+	jmp dyld_stub_binding_helper
+.section __DATA, __la_sym_ptr2,lazy_symbol_pointers
+L_resumeThread$lazy_ptr:
+	.indirect_symbol _resumeThread
+	.long L_resumeThread$stub_binder
+.non_lazy_symbol_pointer
+L_stg_ap_v_info$non_lazy_ptr:
+	.indirect_symbol _stg_ap_v_info
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_bh_upd_frame_info$non_lazy_ptr:
+	.indirect_symbol _stg_bh_upd_frame_info
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_gc_unbx_r1$non_lazy_ptr:
+	.indirect_symbol _stg_gc_unbx_r1
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_gc_unpt_r1$non_lazy_ptr:
+	.indirect_symbol _stg_gc_unpt_r1
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_upd_frame_info$non_lazy_ptr:
+	.indirect_symbol _stg_upd_frame_info
+	.long	0
+.section __TEXT,__picsymbolstub2,symbol_stubs,pure_instructions,25
+L_suspendThread$stub:
+	.indirect_symbol _suspendThread
+	call ___i686.get_pc_thunk.ax
+1:
+	movl L_suspendThread$lazy_ptr-1b(%eax),%edx
+	jmp *%edx
+L_suspendThread$stub_binder:
+	lea L_suspendThread$lazy_ptr-1b(%eax),%eax
+	pushl %eax
+	jmp dyld_stub_binding_helper
+.section __DATA, __la_sym_ptr2,lazy_symbol_pointers
+L_suspendThread$lazy_ptr:
+	.indirect_symbol _suspendThread
+	.long L_suspendThread$stub_binder
+.non_lazy_symbol_pointer
+L_toJSStr$non_lazy_ptr:
+	.indirect_symbol _toJSStr
+	.long	0
+.non_lazy_symbol_pointer
+L_z30UqEPBHMdsbP05EH96SVtGd_ControlziMonadziIOziClass_zdfMonadIOIO_closure$non_lazy_ptr:
+	.indirect_symbol _z30UqEPBHMdsbP05EH96SVtGd_ControlziMonadziIOziClass_zdfMonadIOIO_closure
+	.long	0
+.subsections_via_symbols
+.ident "GHC 7.10.3"
+

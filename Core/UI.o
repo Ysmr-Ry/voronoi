@@ -1,0 +1,1399 @@
+{-# LINE 1 "/var/folders/vf/3ps995857210wmpgxv8lrnbh0000gn/T/ghc4970_0/ghc_50.s" #-}
+.data
+	.align 2
+.align 0
+.globl ___stginit_CoreziUI
+___stginit_CoreziUI:
+.data
+	.align 2
+.align 0
+_r1CSf_closure:
+	.long	_r1CSf_info
+.text
+	.align 2
+_r1CSf_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	0
+	.long	15
+_r1CSf_info:
+Lc1CWl:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CWm
+Lc1CWn:
+	addl $_c1CW9_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	movl %ecx,%esi
+	addl $-4,%ebp
+	testw $7,%si
+	jne _c1CW9_info
+Lc1CWa:
+	jmp *(%esi)
+Lc1CWm:
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	addl $_r1CSf_closure-(1b)+0,%esi
+	jmp *-8(%ebx)
+	.long  _r1CSf_info - _r1CSf_info_dsp
+.text
+	.align 2
+_c1CW9_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1CW9_info:
+Lc1CW9:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	andl $7,%ecx
+	decl %ecx
+	movl %eax,%edx
+	addl $Ln1CWW-(1b)+0,%edx
+	addl (%edx,%ecx,4),%edx
+	jmp *%edx
+Lc1CWd:
+	movl L_ghczmprim_GHCziTypes_True_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 2(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1CWj:
+	movl L_ghczmprim_GHCziTypes_False_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 1(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+	.long  _c1CW9_info - _c1CW9_info_dsp
+.const
+	.align 2
+.align 0
+Ln1CWW:
+	.long	Lc1CWd-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+	.long	Lc1CWj-(Ln1CWW)+0
+.data
+	.align 2
+.align 0
+_r1CSg_closure:
+	.long	_r1CSg_info
+.text
+	.align 2
+_r1CSg_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	0
+	.long	15
+_r1CSg_info:
+Lc1CXj:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CXk
+Lc1CXl:
+	addl $_c1CXc_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	movl %ecx,%esi
+	addl $-4,%ebp
+	testw $7,%si
+	jne _c1CXc_info
+Lc1CXd:
+	jmp *(%esi)
+Lc1CXk:
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	addl $_r1CSg_closure-(1b)+0,%esi
+	jmp *-8(%ebx)
+	.long  _r1CSg_info - _r1CSg_info_dsp
+.text
+	.align 2
+_c1CXc_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1CXc_info:
+Lc1CXc:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	andl $7,%ecx
+	cmpl $3,%ecx
+	jne Lc1CXg
+Lc1CXh:
+	movl L_ghczmprim_GHCziTypes_True_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 2(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1CXg:
+	movl L_ghczmprim_GHCziTypes_False_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 1(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+	.long  _c1CXc_info - _c1CXc_info_dsp
+.data
+	.align 2
+.align 0
+_r1CSh_closure:
+	.long	_r1CSh_info
+.text
+	.align 2
+_r1CSh_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	0
+	.long	15
+_r1CSh_info:
+Lc1CY6:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CY7
+Lc1CY8:
+	addl $_c1CXS_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	movl %ecx,%esi
+	addl $-4,%ebp
+	testw $7,%si
+	jne _c1CXS_info
+Lc1CXT:
+	jmp *(%esi)
+Lc1CY7:
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	addl $_r1CSh_closure-(1b)+0,%esi
+	jmp *-8(%ebx)
+	.long  _r1CSh_info - _r1CSh_info_dsp
+.text
+	.align 2
+_c1CXS_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1CXS_info:
+Lc1CXS:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	andl $7,%ecx
+	cmpl $6,%ecx
+	jb Lc1CY4
+Lc1CY5:
+	movl L_ghczmprim_GHCziTypes_True_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 2(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1CY4:
+	movl L_ghczmprim_GHCziTypes_False_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	leal 1(%eax),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+	.long  _c1CXS_info - _c1CXS_info_dsp
+.data
+	.align 2
+.align 0
+.globl _CoreziUI_button_closure
+_CoreziUI_button_closure:
+	.long	_CoreziUI_button_info
+	.long	0
+.text
+	.align 2
+_s1CUV_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CUV_info:
+Lc1CYX:
+	call 1f
+1:	popl	%eax
+	addl $12,%edi
+	movl 8(%ebx),%ecx
+	cmpl 856(%ebx),%edi
+	ja Lc1CZ1
+Lc1CZ0:
+	movl 3(%esi),%edx
+	movl %eax,64(%esp)
+	movl 7(%esi),%eax
+	movl %edx,76(%esp)
+	movl 64(%esp),%edx
+	movl L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr-(1b)+0(%edx),%edx
+	movl %edx,-8(%edi)
+	movl %ecx,-4(%edi)
+	movl 76(%esp),%ecx
+	movl %ecx,(%edi)
+	leal -7(%edi),%ecx
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	jmp _stg_ap_p_fast
+Lc1CZ1:
+	movl $12,904(%ebx)
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CUV_info - _s1CUV_info_dsp
+.text
+	.align 2
+_s1CUY_info_dsp:
+.text
+	.align 2
+	.long	131087
+	.long	1
+	.long	10
+_s1CUY_info:
+Lc1CZ5:
+	call 1f
+1:	popl	%eax
+	movl 16(%ebx),%ecx
+	movl 8(%ebx),%edx
+	movl %eax,64(%esp)
+	movl %esi,%eax
+	movl %edx,76(%esp)
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CZ6
+Lc1CZ7:
+	addl $12,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZ9
+Lc1CZ8:
+	movl 2(%eax),%eax
+	movl 64(%esp),%edx
+	addl $_s1CUV_info-(1b)+0,%edx
+	movl %edx,-8(%edi)
+	movl 76(%esp),%edx
+	movl %edx,-4(%edi)
+	movl %ecx,(%edi)
+	movl 64(%esp),%ecx
+	addl $_c1CZ2_info-(1b)+0,%ecx
+	movl %ecx,-4(%ebp)
+	leal -7(%edi),%ecx
+	movl %ecx,16(%ebx)
+	movl %eax,8(%ebx)
+	addl $-4,%ebp
+	jmp _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_zdwa2_info
+Lc1CZ9:
+	movl $12,904(%ebx)
+Lc1CZ6:
+	movl %ecx,16(%ebx)
+	movl 76(%esp),%ecx
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	jmp *-8(%ebx)
+	.long  _s1CUY_info - _s1CUY_info_dsp
+.text
+	.align 2
+_c1CZ2_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1CZ2_info:
+Lc1CZ2:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZc
+Lc1CZb:
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1CZc:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1CZ2_info - _c1CZ2_info_dsp
+.text
+	.align 2
+_s1CUQ_info_dsp:
+.text
+	.align 2
+	.long	_S1D3F_srt-(_s1CUQ_info)+0
+	.long	1
+	.long	65553
+_s1CUQ_info:
+Lc1CZd:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CZe
+Lc1CZf:
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZh
+Lc1CZg:
+	movl L_stg_upd_frame_info$non_lazy_ptr-(1b)+0(%eax),%edx
+	movl %edx,-12(%ebp)
+	movl %ecx,-8(%ebp)
+	movl 12(%ecx),%ecx
+	movl %eax,%edx
+	addl $_s1CUY_info-(1b)+0,%edx
+	movl %edx,-4(%edi)
+	movl %ecx,(%edi)
+	leal -2(%edi),%ecx
+	movl %ecx,24(%ebx)
+	movl %eax,%ecx
+	addl $_r1CSf_closure-(1b)+1,%ecx
+	movl %ecx,16(%ebx)
+	movl L_CoreziWorldziInternal_zdfMonadWorld_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,8(%ebx)
+	addl $-12,%ebp
+	jmp _CoreziUtil_waitFor_info
+Lc1CZh:
+	movl $8,904(%ebx)
+Lc1CZe:
+	movl %ecx,%esi
+	jmp *-16(%ebx)
+	.long  _s1CUQ_info - _s1CUQ_info_dsp
+.text
+	.align 2
+_s1CV5_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CV5_info:
+Lc1CZB:
+	call 1f
+1:	popl	%eax
+	addl $12,%edi
+	movl 8(%ebx),%ecx
+	cmpl 856(%ebx),%edi
+	ja Lc1CZF
+Lc1CZE:
+	movl 3(%esi),%edx
+	movl %eax,64(%esp)
+	movl 7(%esi),%eax
+	movl %edx,76(%esp)
+	movl 64(%esp),%edx
+	movl L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr-(1b)+0(%edx),%edx
+	movl %edx,-8(%edi)
+	movl %ecx,-4(%edi)
+	movl 76(%esp),%ecx
+	movl %ecx,(%edi)
+	leal -7(%edi),%ecx
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	jmp _stg_ap_p_fast
+Lc1CZF:
+	movl $12,904(%ebx)
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CV5_info - _s1CV5_info_dsp
+.text
+	.align 2
+_s1CV8_info_dsp:
+.text
+	.align 2
+	.long	131087
+	.long	1
+	.long	10
+_s1CV8_info:
+Lc1CZJ:
+	call 1f
+1:	popl	%eax
+	movl 16(%ebx),%ecx
+	movl 8(%ebx),%edx
+	movl %eax,64(%esp)
+	movl %esi,%eax
+	movl %edx,76(%esp)
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CZK
+Lc1CZL:
+	addl $12,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZN
+Lc1CZM:
+	movl 2(%eax),%eax
+	movl 64(%esp),%edx
+	addl $_s1CV5_info-(1b)+0,%edx
+	movl %edx,-8(%edi)
+	movl 76(%esp),%edx
+	movl %edx,-4(%edi)
+	movl %ecx,(%edi)
+	movl 64(%esp),%ecx
+	addl $_c1CZG_info-(1b)+0,%ecx
+	movl %ecx,-4(%ebp)
+	leal -7(%edi),%ecx
+	movl %ecx,16(%ebx)
+	movl %eax,8(%ebx)
+	addl $-4,%ebp
+	jmp _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_zdwa2_info
+Lc1CZN:
+	movl $12,904(%ebx)
+Lc1CZK:
+	movl %ecx,16(%ebx)
+	movl 76(%esp),%ecx
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	jmp *-8(%ebx)
+	.long  _s1CV8_info - _s1CV8_info_dsp
+.text
+	.align 2
+_c1CZG_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1CZG_info:
+Lc1CZG:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZQ
+Lc1CZP:
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1CZQ:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1CZG_info - _c1CZG_info_dsp
+.text
+	.align 2
+_s1CV0_info_dsp:
+.text
+	.align 2
+	.long	_S1D3F_srt-(_s1CV0_info)+0
+	.long	1
+	.long	65553
+_s1CV0_info:
+Lc1CZR:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1CZS
+Lc1CZT:
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1CZV
+Lc1CZU:
+	movl L_stg_upd_frame_info$non_lazy_ptr-(1b)+0(%eax),%edx
+	movl %edx,-12(%ebp)
+	movl %ecx,-8(%ebp)
+	movl 12(%ecx),%ecx
+	movl %eax,%edx
+	addl $_s1CV8_info-(1b)+0,%edx
+	movl %edx,-4(%edi)
+	movl %ecx,(%edi)
+	leal -2(%edi),%ecx
+	movl %ecx,24(%ebx)
+	movl %eax,%ecx
+	addl $_r1CSh_closure-(1b)+1,%ecx
+	movl %ecx,16(%ebx)
+	movl L_CoreziWorldziInternal_zdfMonadWorld_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,8(%ebx)
+	addl $-12,%ebp
+	jmp _CoreziUtil_waitFor_info
+Lc1CZV:
+	movl $8,904(%ebx)
+Lc1CZS:
+	movl %ecx,%esi
+	jmp *-16(%ebx)
+	.long  _s1CV0_info - _s1CV0_info_dsp
+.text
+	.align 2
+_s1CVm_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVm_info:
+Lc1D0M:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D0Q
+Lc1D0R:
+	addl $_c1D0J_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D0J_info
+Lc1D0K:
+	jmp *(%esi)
+Lc1D0Q:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVm_info - _s1CVm_info_dsp
+.text
+	.align 2
+_c1D0J_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D0J_info:
+Lc1D0J:
+	call 1f
+1:	popl	%eax
+	addl $12,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D0U
+Lc1D0T:
+	movl 7(%esi),%ecx
+	movl L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-8(%edi)
+	movl 8(%ebp),%eax
+	movl %eax,-4(%edi)
+	movl %ecx,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,8(%ebx)
+	movl 4(%ebp),%esi
+	addl $12,%ebp
+	jmp _stg_ap_p_fast
+Lc1D0U:
+	movl $12,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1D0J_info - _c1D0J_info_dsp
+.text
+	.align 2
+_s1CVo_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVo_info:
+Lc1D0W:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -16(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D0X
+Lc1D0Y:
+	addl $_c1D0u_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D0u_info
+Lc1D0v:
+	jmp *(%esi)
+Lc1D0X:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVo_info - _s1CVo_info_dsp
+.text
+	.align 2
+_c1D0u_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D0u_info:
+Lc1D0u:
+	call 1f
+1:	popl	%eax
+	addl $_c1D0z_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	movl 7(%esi),%eax
+	movl 3(%esi),%esi
+	movl %eax,(%ebp)
+	addl $-4,%ebp
+	testw $7,%si
+	jne _c1D0z_info
+Lc1D0A:
+	jmp *(%esi)
+	.long  _c1D0u_info - _c1D0u_info_dsp
+.text
+	.align 2
+_c1D0z_info_dsp:
+.text
+	.align 2
+	.long	3
+	.long	32
+_c1D0z_info:
+Lc1D0z:
+	call 1f
+1:	popl	%eax
+	movl 12(%ebp),%ecx
+	movl 4(%ebp),%edx
+	movl %eax,64(%esp)
+	movl %esi,%eax
+	andl $7,%eax
+	cmpl $7,%eax
+	jne Lc1D11
+Lc1D18:
+	addl $12,%edi
+	movl %esi,%eax
+	cmpl 856(%ebx),%edi
+	ja Lc1D14
+Lc1D1a:
+	movl 64(%esp),%eax
+	movl L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-8(%edi)
+	movl 64(%esp),%eax
+	movl L_CoreziView_Leave_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	addl $3,%eax
+	movl %eax,-4(%edi)
+	movl %edx,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,8(%ebx)
+	movl %ecx,%esi
+	addl $16,%ebp
+	jmp _stg_ap_p_fast
+Lc1D11:
+	addl $12,%edi
+	movl %esi,%eax
+	cmpl 856(%ebx),%edi
+	ja Lc1D14
+Lc1D13:
+	movl %ecx,76(%esp)
+	movl 64(%esp),%ecx
+	addl $_s1CVm_info-(1b)+0,%ecx
+	movl %ecx,-8(%edi)
+	movl 76(%esp),%ecx
+	movl %ecx,-4(%edi)
+	movl %eax,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,16(%ebx)
+	movl %edx,8(%ebx)
+	movl 8(%ebp),%esi
+	addl $16,%ebp
+	jmp _stg_ap_pp_fast
+Lc1D14:
+	movl $12,904(%ebx)
+	movl %eax,%esi
+	movl 64(%esp),%eax
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1D0z_info - _c1D0z_info_dsp
+.text
+	.align 2
+_s1CVb_info_dsp:
+.text
+	.align 2
+	.long	4
+	.long	16
+_s1CVb_info:
+Lc1D1f:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D1g
+Lc1D1h:
+	addl $12,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D1j
+Lc1D1i:
+	movl L_stg_upd_frame_info$non_lazy_ptr-(1b)+0(%eax),%edx
+	movl %edx,-12(%ebp)
+	movl %ecx,-8(%ebp)
+	movl 12(%ecx),%edx
+	movl %eax,64(%esp)
+	movl 16(%ecx),%eax
+	movl %edx,76(%esp)
+	movl 20(%ecx),%edx
+	movl 24(%ecx),%ecx
+	movl %eax,88(%esp)
+	movl 64(%esp),%eax
+	addl $_s1CVo_info-(1b)+0,%eax
+	movl %eax,-8(%edi)
+	movl 76(%esp),%eax
+	movl %eax,-4(%edi)
+	movl %ecx,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,16(%ebx)
+	movl %edx,8(%ebx)
+	movl 88(%esp),%eax
+	movl %eax,%esi
+	addl $-12,%ebp
+	jmp _stg_ap_pp_fast
+Lc1D1j:
+	movl $12,904(%ebx)
+Lc1D1g:
+	movl %ecx,%esi
+	jmp *-16(%ebx)
+	.long  _s1CVb_info - _s1CVb_info_dsp
+.text
+	.align 2
+_s1CVs_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	3
+	.long	9
+_s1CVs_info:
+Lc1D1w:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -16(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D1x
+Lc1D1y:
+	addl $_c1D1p_info-(1b)+0,%eax
+	movl %eax,-16(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %eax,64(%esp)
+	movl 11(%esi),%eax
+	movl %ecx,%esi
+	movl 64(%esp),%ecx
+	movl %ecx,-12(%ebp)
+	movl %edx,-8(%ebp)
+	movl %eax,-4(%ebp)
+	addl $-16,%ebp
+	testw $7,%si
+	jne _c1D1p_info
+Lc1D1q:
+	jmp *(%esi)
+Lc1D1x:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVs_info - _s1CVs_info_dsp
+.text
+	.align 2
+_c1D1p_info_dsp:
+.text
+	.align 2
+	.long	3
+	.long	32
+_c1D1p_info:
+Lc1D1p:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	andl $7,%ecx
+	cmpl $4,%ecx
+	jne Lc1D1t
+Lc1D1u:
+	movl 12(%ebp),%esi
+	andl $-8,%esi
+	addl $16,%ebp
+	jmp *(%esi)
+Lc1D1t:
+	addl $12,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D1E
+Lc1D1D:
+	movl L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-8(%edi)
+	movl %esi,-4(%edi)
+	movl 4(%ebp),%eax
+	movl %eax,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,8(%ebx)
+	movl 8(%ebp),%esi
+	addl $16,%ebp
+	jmp _stg_ap_p_fast
+Lc1D1E:
+	movl $12,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1D1p_info - _c1D1p_info_dsp
+.text
+	.align 2
+_s1CVv_info_dsp:
+.text
+	.align 2
+	.long	131087
+	.long	3
+	.long	9
+_s1CVv_info:
+Lc1D1M:
+	call 1f
+1:	popl	%eax
+	movl 16(%ebx),%ecx
+	movl 8(%ebx),%edx
+	movl %eax,64(%esp)
+	movl %esi,%eax
+	movl %edx,76(%esp)
+	leal -4(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D1N
+Lc1D1O:
+	addl $44,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D1Q
+Lc1D1P:
+	movl 2(%eax),%edx
+	movl %edx,88(%esp)
+	movl 6(%eax),%edx
+	movl 10(%eax),%eax
+	movl %edx,100(%esp)
+	movl 64(%esp),%edx
+	addl $_s1CVb_info-(1b)+0,%edx
+	movl %edx,-40(%edi)
+	movl 88(%esp),%edx
+	movl %edx,-28(%edi)
+	movl %eax,-24(%edi)
+	movl 76(%esp),%eax
+	movl %eax,-20(%edi)
+	movl %ecx,-16(%edi)
+	movl 64(%esp),%edx
+	addl $_s1CVs_info-(1b)+0,%edx
+	movl %edx,-12(%edi)
+	movl %eax,-8(%edi)
+	movl %ecx,-4(%edi)
+	leal -40(%edi),%eax
+	movl %eax,(%edi)
+	movl 64(%esp),%eax
+	addl $_c1D1J_info-(1b)+0,%eax
+	movl %eax,-4(%ebp)
+	leal -11(%edi),%eax
+	movl %eax,16(%ebx)
+	movl 100(%esp),%eax
+	movl %eax,8(%ebx)
+	addl $-4,%ebp
+	jmp _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_zdwa2_info
+Lc1D1Q:
+	movl $44,904(%ebx)
+Lc1D1N:
+	movl %ecx,16(%ebx)
+	movl 76(%esp),%ecx
+	movl %ecx,8(%ebx)
+	movl %eax,%esi
+	jmp *-8(%ebx)
+	.long  _s1CVv_info - _s1CVv_info_dsp
+.text
+	.align 2
+_c1D1J_info_dsp:
+.text
+	.align 2
+	.long	0
+	.long	32
+_c1D1J_info:
+Lc1D1J:
+	call 1f
+1:	popl	%eax
+	addl $8,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D1T
+Lc1D1S:
+	movl L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,-4(%edi)
+	movl %esi,(%edi)
+	leal -3(%edi),%esi
+	addl $4,%ebp
+	jmp *(%ebp)
+Lc1D1T:
+	movl $8,904(%ebx)
+	jmp *L_stg_gc_unpt_r1$non_lazy_ptr-(1b)+0(%eax)
+	.long  _c1D1J_info - _c1D1J_info_dsp
+.text
+	.align 2
+_s1CUZ_info_dsp:
+.text
+	.align 2
+	.long	_S1D3F_srt-(_s1CUZ_info)+0
+	.long	2
+	.long	65555
+_s1CUZ_info:
+Lc1D1U:
+	call 1f
+1:	popl	%eax
+	movl %esi,%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D1V
+Lc1D1W:
+	addl $32,%edi
+	cmpl 856(%ebx),%edi
+	ja Lc1D1Y
+Lc1D1X:
+	movl L_stg_upd_frame_info$non_lazy_ptr-(1b)+0(%eax),%edx
+	movl %edx,-12(%ebp)
+	movl %ecx,-8(%ebp)
+	movl 12(%ecx),%edx
+	movl 16(%ecx),%ecx
+	movl %eax,64(%esp)
+	addl $_s1CV0_info-(1b)+0,%eax
+	movl %eax,-28(%edi)
+	movl %ecx,-16(%edi)
+	movl 64(%esp),%eax
+	addl $_s1CVv_info-(1b)+0,%eax
+	movl %eax,-12(%edi)
+	movl %edx,-8(%edi)
+	movl %ecx,-4(%edi)
+	leal -28(%edi),%eax
+	movl %eax,(%edi)
+	leal -10(%edi),%eax
+	movl %eax,24(%ebx)
+	movl 64(%esp),%eax
+	movl %eax,%ecx
+	addl $_r1CSg_closure-(1b)+1,%ecx
+	movl %ecx,16(%ebx)
+	movl L_CoreziWorldziInternal_zdfMonadWorld_closure$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,8(%ebx)
+	addl $-12,%ebp
+	jmp _CoreziUtil_waitFor_info
+Lc1D1Y:
+	movl $32,904(%ebx)
+Lc1D1V:
+	movl %ecx,%esi
+	jmp *-16(%ebx)
+	.long  _s1CUZ_info - _s1CUZ_info_dsp
+.text
+	.align 2
+_s1CVA_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVA_info:
+Lc1D2A:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D2B
+Lc1D2C:
+	addl $_c1D2x_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D2x_info
+Lc1D2y:
+	jmp *(%esi)
+Lc1D2B:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVA_info - _s1CVA_info_dsp
+.text
+	.align 2
+_c1D2x_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D2x_info:
+Lc1D2x:
+	call 1f
+1:	popl	%eax
+	movl 7(%esi),%ecx
+	movl %ecx,8(%ebx)
+	movl 4(%ebp),%esi
+	movl L_stg_ap_p_info$non_lazy_ptr-(1b)+0(%eax),%eax
+	movl %eax,4(%ebp)
+	addl $4,%ebp
+	jmp _s1CVw_info
+	.long  _c1D2x_info - _c1D2x_info_dsp
+.text
+	.align 2
+_s1CVF_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVF_info:
+Lc1D2P:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D2Q
+Lc1D2R:
+	addl $_c1D2M_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D2M_info
+Lc1D2N:
+	jmp *(%esi)
+Lc1D2Q:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVF_info - _s1CVF_info_dsp
+.text
+	.align 2
+_c1D2M_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D2M_info:
+Lc1D2M:
+	movl 8(%ebp),%eax
+	movl %eax,16(%ebx)
+	movl 7(%esi),%eax
+	movl %eax,8(%ebx)
+	movl 4(%ebp),%esi
+	addl $12,%ebp
+	jmp _stg_ap_pp_fast
+	.long  _c1D2M_info - _c1D2M_info_dsp
+.text
+	.align 2
+_s1CVK_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVK_info:
+Lc1D34:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D35
+Lc1D36:
+	addl $_c1D31_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D31_info
+Lc1D32:
+	jmp *(%esi)
+Lc1D35:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVK_info - _s1CVK_info_dsp
+.text
+	.align 2
+_c1D31_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D31_info:
+Lc1D31:
+	movl 8(%ebp),%eax
+	movl %eax,16(%ebx)
+	movl 7(%esi),%eax
+	movl %eax,8(%ebx)
+	movl 4(%ebp),%esi
+	addl $12,%ebp
+	jmp _stg_ap_pp_fast
+	.long  _c1D31_info - _c1D31_info_dsp
+.text
+	.align 2
+_s1CVT_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	2
+	.long	12
+_s1CVT_info:
+Lc1D3j:
+	call 1f
+1:	popl	%eax
+	movl 8(%ebx),%ecx
+	leal -12(%ebp),%edx
+	cmpl 840(%ebx),%edx
+	jb Lc1D3k
+Lc1D3l:
+	addl $_c1D3g_info-(1b)+0,%eax
+	movl %eax,-12(%ebp)
+	movl 3(%esi),%eax
+	movl 7(%esi),%edx
+	movl %ecx,%esi
+	movl %eax,-8(%ebp)
+	movl %edx,-4(%ebp)
+	addl $-12,%ebp
+	testw $7,%si
+	jne _c1D3g_info
+Lc1D3h:
+	jmp *(%esi)
+Lc1D3k:
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVT_info - _s1CVT_info_dsp
+.text
+	.align 2
+_c1D3g_info_dsp:
+.text
+	.align 2
+	.long	2
+	.long	32
+_c1D3g_info:
+Lc1D3g:
+	movl 8(%ebp),%eax
+	movl %eax,16(%ebx)
+	movl 7(%esi),%eax
+	movl %eax,8(%ebx)
+	movl 4(%ebp),%esi
+	addl $12,%ebp
+	jmp _stg_ap_pp_fast
+	.long  _c1D3g_info - _c1D3g_info_dsp
+.text
+	.align 2
+_s1CVU_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	5
+	.long	9
+_s1CVU_info:
+Lc1D3q:
+	call 1f
+1:	popl	%eax
+	addl $48,%edi
+	movl 8(%ebx),%ecx
+	cmpl 856(%ebx),%edi
+	ja Lc1D3u
+Lc1D3t:
+	movl 3(%esi),%edx
+	movl %eax,64(%esp)
+	movl 7(%esi),%eax
+	movl %edx,76(%esp)
+	movl 11(%esi),%edx
+	movl %eax,88(%esp)
+	movl 15(%esi),%eax
+	movl %edx,100(%esp)
+	movl 19(%esi),%edx
+	movl %eax,112(%esp)
+	movl 64(%esp),%eax
+	addl $_s1CVA_info-(1b)+0,%eax
+	movl %eax,-44(%edi)
+	movl 112(%esp),%eax
+	movl %eax,-40(%edi)
+	movl %ecx,-36(%edi)
+	movl 64(%esp),%eax
+	movl %eax,%ecx
+	addl $_s1CVF_info-(1b)+0,%ecx
+	movl %ecx,-32(%edi)
+	movl 100(%esp),%ecx
+	movl %ecx,-28(%edi)
+	leal -43(%edi),%ecx
+	movl %ecx,-24(%edi)
+	movl %eax,%ecx
+	addl $_s1CVK_info-(1b)+0,%ecx
+	movl %ecx,-20(%edi)
+	movl 76(%esp),%ecx
+	movl %ecx,-16(%edi)
+	leal -31(%edi),%ecx
+	movl %ecx,-12(%edi)
+	addl $_s1CVT_info-(1b)+0,%eax
+	movl %eax,-8(%edi)
+	movl 88(%esp),%eax
+	movl %eax,-4(%edi)
+	leal -19(%edi),%eax
+	movl %eax,(%edi)
+	leal -7(%edi),%eax
+	movl %eax,8(%ebx)
+	movl %edx,%esi
+	jmp _stg_ap_p_fast
+Lc1D3u:
+	movl $48,904(%ebx)
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVU_info - _s1CVU_info_dsp
+.text
+	.align 2
+_s1CVw_info_dsp:
+.text
+	.align 2
+	.long	65541
+	.long	4
+	.long	9
+_s1CVw_info:
+Lc1D3v:
+	call 1f
+1:	popl	%eax
+	addl $44,%edi
+	movl 8(%ebx),%ecx
+	cmpl 856(%ebx),%edi
+	ja Lc1D3z
+Lc1D3y:
+	movl 3(%esi),%edx
+	movl %eax,64(%esp)
+	movl 7(%esi),%eax
+	movl %edx,76(%esp)
+	movl 11(%esi),%edx
+	movl %eax,88(%esp)
+	movl 15(%esi),%eax
+	movl %edx,100(%esp)
+	movl 64(%esp),%edx
+	movl L_stg_ap_2_upd_info$non_lazy_ptr-(1b)+0(%edx),%edx
+	movl %edx,-40(%edi)
+	movl 76(%esp),%edx
+	movl %edx,-28(%edi)
+	movl %ecx,-24(%edi)
+	movl 64(%esp),%ecx
+	addl $_s1CVU_info-(1b)+0,%ecx
+	movl %ecx,-20(%edi)
+	movl 88(%esp),%ecx
+	movl %ecx,-16(%edi)
+	movl 100(%esp),%ecx
+	movl %ecx,-12(%edi)
+	movl %eax,-8(%edi)
+	movl %esi,-4(%edi)
+	leal -40(%edi),%eax
+	movl %eax,(%edi)
+	leal -19(%edi),%esi
+	jmp *(%ebp)
+Lc1D3z:
+	movl $44,904(%ebx)
+	movl %ecx,8(%ebx)
+	jmp *-8(%ebx)
+	.long  _s1CVw_info - _s1CVw_info_dsp
+.text
+	.align 2
+_CoreziUI_button_info_dsp:
+.text
+	.align 2
+	.long	_S1D3F_srt-(_CoreziUI_button_info)+0
+	.long	262168
+	.long	0
+	.long	196623
+.globl _CoreziUI_button_info
+_CoreziUI_button_info:
+Lc1D3A:
+	call 1f
+1:	popl	%eax
+	addl $56,%edi
+	movl 32(%ebx),%ecx
+	movl 24(%ebx),%edx
+	movl %eax,64(%esp)
+	movl 16(%ebx),%eax
+	movl %eax,76(%esp)
+	movl 8(%ebx),%eax
+	cmpl 856(%ebx),%edi
+	ja Lc1D3E
+Lc1D3D:
+	movl %eax,88(%esp)
+	movl 64(%esp),%eax
+	addl $_s1CUQ_info-(1b)+0,%eax
+	movl %eax,-52(%edi)
+	movl %ecx,-40(%edi)
+	movl 64(%esp),%eax
+	addl $_s1CUZ_info-(1b)+0,%eax
+	movl %eax,-36(%edi)
+	movl %edx,-24(%edi)
+	movl %ecx,-20(%edi)
+	movl 64(%esp),%eax
+	addl $_s1CVw_info-(1b)+0,%eax
+	movl %eax,-16(%edi)
+	movl 88(%esp),%eax
+	movl %eax,-12(%edi)
+	movl 76(%esp),%eax
+	movl %eax,-8(%edi)
+	leal -52(%edi),%eax
+	movl %eax,-4(%edi)
+	leal -36(%edi),%eax
+	movl %eax,(%edi)
+	leal -15(%edi),%esi
+	jmp *(%ebp)
+Lc1D3E:
+	movl $56,904(%ebx)
+	movl %ecx,32(%ebx)
+	movl %edx,24(%ebx)
+	movl 76(%esp),%ecx
+	movl %ecx,16(%ebx)
+	movl %eax,8(%ebx)
+	movl 64(%esp),%eax
+	movl L_CoreziUI_button_closure$non_lazy_ptr-(1b)+0(%eax),%esi
+	jmp *-8(%ebx)
+	.long  _CoreziUI_button_info - _CoreziUI_button_info_dsp
+.const_data
+	.align 2
+.align 0
+_S1D3F_srt:
+	.long	_CoreziWorldziInternal_zdfMonadWorld_closure
+	.long	_CoreziUI_button_closure
+.section __TEXT,__textcoal_nt,coalesced,no_toc
+.weak_definition ___i686.get_pc_thunk.ax
+.private_extern ___i686.get_pc_thunk.ax
+___i686.get_pc_thunk.ax:
+	movl (%esp), %eax
+	ret
+.non_lazy_symbol_pointer
+L_CoreziUI_button_closure$non_lazy_ptr:
+	.indirect_symbol _CoreziUI_button_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_CoreziView_Leave_closure$non_lazy_ptr:
+	.indirect_symbol _CoreziView_Leave_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_CoreziWorldziInternal_zdfMonadWorld_closure$non_lazy_ptr:
+	.indirect_symbol _CoreziWorldziInternal_zdfMonadWorld_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info$non_lazy_ptr:
+	.indirect_symbol _LApUZZuWlHYm7n1MKPK7mnS_HasteziConcurrentziMonad_Atom_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_ghczmprim_GHCziTuple_Z2T_con_info$non_lazy_ptr:
+	.indirect_symbol _ghczmprim_GHCziTuple_Z2T_con_info
+	.long	0
+.non_lazy_symbol_pointer
+L_ghczmprim_GHCziTypes_False_closure$non_lazy_ptr:
+	.indirect_symbol _ghczmprim_GHCziTypes_False_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_ghczmprim_GHCziTypes_True_closure$non_lazy_ptr:
+	.indirect_symbol _ghczmprim_GHCziTypes_True_closure
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_ap_2_upd_info$non_lazy_ptr:
+	.indirect_symbol _stg_ap_2_upd_info
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_ap_p_info$non_lazy_ptr:
+	.indirect_symbol _stg_ap_p_info
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_gc_unpt_r1$non_lazy_ptr:
+	.indirect_symbol _stg_gc_unpt_r1
+	.long	0
+.non_lazy_symbol_pointer
+L_stg_upd_frame_info$non_lazy_ptr:
+	.indirect_symbol _stg_upd_frame_info
+	.long	0
+.subsections_via_symbols
+.ident "GHC 7.10.3"
+

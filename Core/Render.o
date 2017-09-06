@@ -1,0 +1,19 @@
+{-# LINE 1 "/var/folders/vf/3ps995857210wmpgxv8lrnbh0000gn/T/ghc4970_0/ghc_42.s" #-}
+.data
+	.align 2
+.align 0
+.globl ___stginit_CoreziRender
+___stginit_CoreziRender:
+.const_data
+	.align 2
+.align 0
+_S1vKF_srt:
+.section __TEXT,__textcoal_nt,coalesced,no_toc
+.weak_definition ___i686.get_pc_thunk.ax
+.private_extern ___i686.get_pc_thunk.ax
+___i686.get_pc_thunk.ax:
+	movl (%esp), %eax
+	ret
+.subsections_via_symbols
+.ident "GHC 7.10.3"
+

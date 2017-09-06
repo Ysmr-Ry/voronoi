@@ -1,27 +1,35 @@
-{-# LANGUAGE StrictData #-}
-module Fortune
+{-# LANGUAGE PackageImports #-}
+{-# LANGUAGE MultiWayIf #-}
+module Fortune.Fortune
   ( voronoi
   , Edge' (..)
+  , Edge (..)
+  , module Fortune.BreakpointTree
+  , circleFrom3Points
   )
 where
 
-import BreakpointTree
+import Fortune.BreakpointTree
 
 
 import Control.Monad (liftM, join)
 
 import Data.Maybe (maybeToList, catMaybes)
-import Data.List (sortOn)
+import Data.List (sortOn, sortBy, minimumBy)
 
-import qualified Data.Vector.Unboxed as VU
-import qualified Data.Vector as V
+--import qualified Data.Vector as V
 
-import qualified Data.Map.Strict as Map
-import           Data.Map.Strict (Map)
+import qualified Data.Map as Map
+import           Data.Map (Map)
 
-import qualified Data.HashPSQ as PSQ
-import           Data.HashPSQ (HashPSQ)
+--import qualified Data.HashPSQ as PSQ
+--import           Data.HashPSQ (HashPSQ)
 
+import qualified Data.Set as Set
+
+import "mtl" Control.Monad.Writer
+
+import Data.Function (on)
 
 type Index = Int
 type Coord = Double
@@ -30,11 +38,12 @@ type Coord = Double
 
 type Point'= (Double, Double)
 
-data Edge  = EmptyEdge | IEdge !Point' | Edge !Point' !Point'
+data Edge  = EmptyEdge | IEdge !Point' | Edge !Point' !Point' deriving Show
 data Edge' = Edge' !Index !Index !Point' !Point' deriving (Show)
 
 type NewPointEvent = Point
 data CircleEvent   = CircleEvent !Point !Point !Point !Coord !Point'
+  deriving (Eq, Ord)
 
 instance Show CircleEvent where
   show (CircleEvent pi pj pk _ _) = show (pindex pi, pindex pj, pindex pk)
@@ -42,8 +51,8 @@ instance Show CircleEvent where
 
 data Events = Events
   {
-    newPointEvents :: V.Vector NewPointEvent
-  , circleEvents   :: HashPSQ (Index, Index, Index) Coord CircleEvent
+    newPointEvents :: [NewPointEvent]
+  , circleEvents   :: Set.Set (Coord, (Index, Index, Index), CircleEvent)
   }
 
 data State = State
@@ -54,6 +63,9 @@ data State = State
   , prevd  :: Double
   }
 
+type IsCircleEvent = Bool
+
+type Log = Map Double (IsCircleEvent, Map (Index, Index) Edge, BTree, (Index, Index, Index))
 
 -- * Private methods
 -- ** Manipulating events
@@ -126,19 +138,19 @@ circleFrom3Points (P _ x1 y1) (P _ x2 y2) (P _ x3 y3) =
     else
       Just ((x, y), r)
 
-circleEvent :: Point -> Point -> Point -> Maybe CircleEvent
-circleEvent pi pj pk = liftM (\(c@(_, y), r) -> CircleEvent pi pj pk (y + r) c)
+circleEvent :: Double -> Point -> Point -> Point -> Maybe CircleEvent
+circleEvent h pi pj pk = liftM (\(c@(_, y), r) -> CircleEvent pi pj pk ((y + r)`min`h) c)
   $ circleFrom3Points pi pj pk
 
 
 -- ** Processing events
 
-processCircleEvent :: State -> State
-processCircleEvent state = let
+processCircleEvent :: Double -> State -> State
+processCircleEvent h state = let
   -- state data:
-  Just (_, _, (CircleEvent pi@(P i _ _) pj@(P j _ _) pk@(P k _ _) y p), cevents) =
-    PSQ.minView . circleEvents . events $ state
+  (_, _, (CircleEvent pi@(P i _ _) pj@(P j _ _) pk@(P k _ _) y p)) = Set.findMin . circleEvents . events $ state
   events' = events $ state
+  cevents = circleEvents $ events'
   bTree = breaks state
   d     = y
   d'    = (d + prevd  state) / 2
@@ -155,11 +167,11 @@ processCircleEvent state = let
 
   newCEvents'
     | previ == 0 && prevj == 0 =
-      maybeToList $ circleEvent pi pk next
+      maybeToList $ circleEvent h pi pk next
     | nexti == 0 && nextj == 0 =
-      maybeToList $ circleEvent prev pi pk
+      maybeToList $ circleEvent h prev pi pk
     | otherwise =
-      catMaybes [circleEvent pi pk next, circleEvent prev pi pk]
+      catMaybes [circleEvent h pi pk next, circleEvent h prev pi pk]
   
   toRemove
     | previ == 0 && prevj == 0 =
@@ -170,8 +182,9 @@ processCircleEvent state = let
       [(i, j, k), (previ, i, j), (j, k, nextj)]
 
   insert' ev@(CircleEvent pi pj pk y _) =
-    PSQ.insert (pindex pi, pindex pj, pindex pk) y ev
-  removed = foldr PSQ.delete cevents toRemove
+    Set.insert (y, (pindex pi, pindex pj, pindex pk), ev)
+  removeElem = Set.filter ((`elem`toRemove) . (\(_,a,_) -> a)) cevents
+  removed = foldr Set.delete cevents removeElem
   newCEvents = foldr insert' removed newCEvents'
 
   newEvents = events' { circleEvents = newCEvents }
@@ -187,11 +200,11 @@ processCircleEvent state = let
   in 
     state { breaks = newBTree, events = newEvents, edges = newEdges, prevd = d }
 
-processNewPointEvent :: State -> State
-processNewPointEvent state = let
+processNewPointEvent :: Double -> State -> State
+processNewPointEvent h state = let
   -- state data:
-  newp@(P idx _ d) = V.head . newPointEvents . events $ state
-  newPEvents       = V.tail . newPointEvents . events $ state
+  newp@(P idx _ d) = head . newPointEvents . events $ state
+  newPEvents       = tail . newPointEvents . events $ state
   cEvents = circleEvents . events $ state
   events' = events state
   bTree = breaks state
@@ -208,15 +221,16 @@ processNewPointEvent state = let
     Left b -> pointAtLeftOf b
     Right b -> pointAtRightOf b
   
-  newCEvents' = catMaybes [ do pi <- pi; circleEvent pi pj newp
-                          , do pk <- pk; circleEvent newp pj pk]
+  newCEvents' = catMaybes [ do pi <- pi; circleEvent h pi pj newp
+                          , do pk <- pk; circleEvent h newp pj pk]
   
   toRemove = (pi, pj, pk)
 
   insert' ev@(CircleEvent pi pj pk y _) =
-    PSQ.insert (pindex pi, pindex pj, pindex pk) y ev
+    Set.insert (y, (pindex pi, pindex pj, pindex pk), ev)
   removed = case toRemove of
-    (Just i, j, Just k) -> PSQ.delete (pindex i, pindex j, pindex k) cEvents
+    (Just i, j, Just k) -> let removeElems = Set.toList $ Set.filter ((==(pindex i,pindex j,pindex k)) . (\(_,a,_) -> a)) cEvents
+      in foldr Set.delete cEvents removeElems
     _ -> cEvents
   newCEvents = foldr insert' removed newCEvents'
 
@@ -229,59 +243,90 @@ processNewPointEvent state = let
   in
     state { breaks = newBTree, events = newEvents, edges = newEdges, prevd = d }
 
-processEvent :: State -> State
-processEvent state
-  | (V.null . newPointEvents . events) state && 
-    (PSQ.null . circleEvents . events) state = state
-  | otherwise = 
-    if nextIsCircle then
-      processCircleEvent state
-    else
-      processNewPointEvent state
-  where
-    (P _ _ nextPointY) = V.head .  newPointEvents . events $ state
-    (Just (_, nextCircleY, _)) = PSQ.findMin . circleEvents . events $ state
+processEvent :: Double -> Writer Log State -> Writer Log State
+processEvent h wri = do
+  state <- wri
+  let
+    (P _ _ nextPointY) = head .  newPointEvents . events $ state
+    ((nextCircleY, idxs, _)) = Set.findMin . circleEvents . events $ state
     nextIsCircle
-      | (V.null . newPointEvents .events) state = True
-      | (PSQ.null . circleEvents . events) state = False
+      | (null . newPointEvents .events) state = True
+      | (Set.null . circleEvents . events) state = False
       | otherwise = nextCircleY <= nextPointY
+  if
+    | (null . newPointEvents . events) state && 
+      (Set.null . circleEvents . events) state -> return state
+    | otherwise -> do 
+      if nextIsCircle then do
+        tell $ Map.singleton (prevd state) $ (True, edges state, breaks state, idxs)
+        return $ processCircleEvent h state
+      else do
+        tell $ Map.singleton (prevd state) $ (False, edges state, breaks state, (0,0,0))
+        return $ processNewPointEvent h state
 
 {- |
     voronoi takes a Vector of pairs of Double(s) and returns a Vector of
     Edge(s) representing the corresponding voronoi diagram.
 -}
-voronoi :: [Point'] -> [Edge']
-voronoi points =
+voronoi :: [Point'] -> Double -> Double -> Writer Log [Edge']
+voronoi points w h =
   let
-    go :: State -> [Edge']
-    go state = if ((null.newPointEvents.events) state) &&
-      ((null.circleEvents.events) state) then
-      mapToList . edges $ state
-    else
-      go (processEvent state)
+    go :: Writer Log State -> Writer Log [Edge']
+    go wri = do
+      state <- wri
+      if ((null.newPointEvents.events) state) &&
+        ((null.circleEvents.events) state) then
+        return . mapToList points w h . edges $ state
+      else
+        go (processEvent h wri)
   in
-    go . mkState $ points
+    go . return . mkState $ points
 
 mkState :: [Point'] -> State
 mkState points = let
   ps = sortOn snd points
-  newPEvents' = (V.imap (\i (x, y) -> P i x y)) . V.fromList $ ps
-  newPEvents = V.tail . V.tail $ newPEvents'
-  p0@(P i _ _) = (newPEvents' V.! 0)
-  p1@(P j _ d) = (newPEvents' V.! 1)
+  newPEvents' = map (\(i, (x, y)) -> P i x y) $ zip [0..] ps
+  newPEvents = tail . tail $ newPEvents'
+  p0@(P i _ _) = (newPEvents' !! 0)
+  p1@(P j _ d) = (newPEvents' !! 1)
   b1 = Breakpoint p0 p1
   b2 = Breakpoint p1 p0
   firstPair = Node Nil b1 $ Node Nil b2 Nil
   firstEdge = Map.singleton (sortPair i j) EmptyEdge
   in
-    State (Events newPEvents PSQ.empty) firstPair firstEdge d
+    State (Events newPEvents Set.empty) firstPair firstEdge d
 
-mapToList map = let
-  list' = Map.toList map
-  predicate (_, e) = case e of
+mapToList :: [Point'] -> Double -> Double -> Map (Index, Index) Edge -> [Edge']
+mapToList points w h mapD = let
+  list' = Map.toList mapD
+  iedgeM :: ((Index, Index), Edge) -> ((Index, Index), Edge)
+  iedgeM ((i,j), e) = case e of
+    Edge p q -> ((i,j), Edge p q)
+    IEdge p@(x,y) -> if x >= 0 && x <= w && y >= 0 && y <= h
+      then let
+          (x1,y1) = points!!i
+          (x2,y2) = points!!j
+          f x = ((x2**2-x1**2+y2**2-y1**2)/2-(x2-x1)*x)/(y2-y1)
+          g y = ((x2**2-x1**2+y2**2-y1**2)/2-(y2-y1)*y)/(x2-x1)
+          cands = if
+            | y2 /= y1 && x2 /= x1 -> [(0,f 0), (0,f w), (g 0,0), (g h,h)]
+            | y2 /= y1             -> [(0,f 0), (0,f w)]
+            | x2 /= x1             -> [(g 0,0), (g h,h)]
+          dist (a,b) (c,d) = (a-c)**2 + (b-d)**2
+          nearestPts pt = sortBy (compare `on` (dist pt)) points
+        in if abs (dist p (x1,y1)-dist p (x2,y2)) < 0.01
+          then ((i,j), Edge p (minimumBy (compare `on` (dist p)) $ filter ((\x -> (x1,y1)`elem`x && (x2,y2)`elem`x) . take 2 . nearestPts) cands))
+          else ((i,j), IEdge p)
+      else
+        ((i,j), IEdge p)
+    EmptyEdge -> ((i,j), EmptyEdge)
+      {-
+        (x2-x1)*x+(y2-y1)*y = x2^2-x1^2/2+(y2^2-y1^2)/2
+      -}
+  predicate (_,e) = case e of
     Edge _ _ -> True
     _ -> False
-  list = filter predicate list'
+  list = filter predicate $ map iedgeM list'
   edge' ((i, j), Edge l r) = Edge' i j l r
   in
     fmap edge' list

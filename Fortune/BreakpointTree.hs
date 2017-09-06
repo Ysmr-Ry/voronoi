@@ -1,5 +1,4 @@
-{-# LANGUAGE Strict #-}
-module BreakpointTree
+module Fortune.BreakpointTree
   ( BTree (..)
   , Breakpoint (..)
   , Point (..)
@@ -8,6 +7,8 @@ module BreakpointTree
   , inOrderSuccessor
   , inOrderPredecessor
   , inOrder
+  , evalParabola
+  , intersection
   )
 where
 
@@ -16,7 +17,7 @@ import Control.Arrow ((***))
 
 type Index = Int
 
-data Point = P !Index !Double !Double deriving (Show)
+data Point = P !Index !Double !Double deriving (Eq, Ord, Show)
 data Breakpoint = Breakpoint !Point !Point
 
 instance Show Breakpoint where
@@ -73,7 +74,7 @@ intersection (P _ f1x f1y) (P _ f2x f2y) d =
     x = (f1y*f2x + sqroot + lastterm)/(f1y - f2y)
   in
     if (abs (f1y - f2y) < 0.0000001) then
-      if f1x < f2x then (f1x + f2x) / 2 else 1/0
+      if f1x < f2x then (f1x + f2x) / 2 else (f1x + f2x) / 2--1/0
     else
       x
 
